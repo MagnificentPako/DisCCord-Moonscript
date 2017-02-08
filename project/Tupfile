@@ -1,5 +1,5 @@
 include_rules
-# Add some stuff you might need
+
 # Add/Remove whatever you might need
 
   # MetaLua in every single damn folder
@@ -27,4 +27,4 @@ include_rules
   : src/json.lua |> !cat |> compiled/json.lua
 
 # compile everything with the packager
-: compiled/* | compiled/nodes/* compiled/styles/* compiled/markup/* |> !package |> out.lua
+: compiled/* | compiled/nodes/* compiled/styles/* compiled/markup/* |> !packageMinify |> out.lua
