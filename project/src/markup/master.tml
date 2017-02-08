@@ -1,0 +1,26 @@
+<PageContainer X=1 Y=1 width=51 height=19>
+
+  <Page id=serverSelect xScrollAllowed=false>
+    <Label X=22 Y=3 text="DisCCord" />
+    <Label X=7 Y=6 text="Server:" />
+    <Label X=27 Y=6 text="Username:" />
+    <Input X=27 Y=7 limit=20 width=18 id=usernameInput />
+    <Button X=17 Y=11 width=18 id=serverNextButton text="Next" />
+    <Dropdown X=7 Y=7 width=18 maxHeight=4 id=serverSelector />
+  </Page>
+
+  <Page id=chat>
+  <Button X=45 Y=19 text="back" width=7 id=chatBackButton />
+
+  <ScrollContainer X=2 Y=1 height=18 width=50 id=messages xScrollAllowed=false/>
+
+  <Input X=2 Y=19 width=43 limit=100 id=chatInput placeholder="Insert text here..."/>
+
+    <Container X="-8" Y=1 height=19 width=10 id=channelsContainer>
+      <ScrollContainer X=1 Y=2 width=10 height=18 id=channels/>
+      <Label X=1 Y=1 text="Channels " backgroundColour=black/>
+      <Button X=10 Y=1 width=1 text=">" id=toggleChannels/>
+    </Container>
+  </Page>
+
+</PageContainer>

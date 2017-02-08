@@ -1,0 +1,41 @@
+<Input>
+  <backgroundColour>lightGray</backgroundColour>
+</Input>
+
+<Button id=serverNextButton>
+  <horizontalAlign>centre</horizontalAlign>
+  <backgroundColour>cyan</backgroundColour>
+  <activeColour>black</activeColour>
+  <activeBackgroundColour>white</activeBackgroundColour>
+</Button>
+
+<Input id=chatInput>
+  <backgroundColour>white</backgroundColour>
+  <colour>lightGrey</colour>
+  <focusedColour>black</focusedColour>
+</Input>
+
+<ScrollContainer id=messages>
+  <backgroundColour>gray</backgroundColour>
+  <scrollbarColour>lightBlue</scrollbarColour>
+  <activeScrollbarColour>blue</activeScrollbarColour>
+  <trayColour>lightGray</trayColour>
+</ScrollContainer>
+
+<Container id=channelsContainer>
+  <backgroundColour>black</backgroundColour>
+</Container>
+
+<ScrollContainer id=channels>
+  <backgroundColour>black</backgroundColour>
+</ScrollContainer>
+
+<Button id=chatBackButton>
+  <horizontalAlign>centre</horizontalAlign>
+  <backgroundColour>black</backgroundColour>
+  <colour>lightGray</colour>
+</Button>
+
+<TextContainer class="message">
+  <backgroundColour>green</backgroundColour>
+</TextContainer>

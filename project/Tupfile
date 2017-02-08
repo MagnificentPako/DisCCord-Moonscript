@@ -1,0 +1,30 @@
+include_rules
+# Add some stuff you might need
+# Add/Remove whatever you might need
+
+  # MetaLua in every single damn folder
+    : foreach src/*.mlua |> !meta |> compiled/%B.lua
+    : foreach src/nodes/*.mlua |> !meta |> compiled/nodes/%B.lua
+    : foreach src/styles/*.mlua |> !meta |> compiled/styles/%B.lua
+    : foreach src/markup/*.mlua |> !meta |> compiled/markup/%B.lua
+
+  # Moonscript for everything too
+    : foreach src/*.moon |> !moon |> compiled/%B.lua
+    : foreach src/nodes/*.moon |> !moon |> compiled/nodes/%B.lua
+    : foreach src/styles/*.moon |> !moon |> compiled/styles/%B.lua
+    : foreach src/markup/*.moon |> !moon |> compiled/markup/%B.lua
+
+  # Themes
+    : foreach src/styles/*.theme |> !cat |> compiled/styles/%B.theme
+
+  # Markup
+    : foreach src/markup/*.tml |> !cat |> compiled/markup/%B.tml
+
+  # Nodes
+    : foreach src/nodes/*.ti |> !cat |> compiled/nodes/%B.ti
+
+# Copy my lib to the compiled folder
+  : src/json.lua |> !cat |> compiled/json.lua
+
+# compile everything with the packager
+: compiled/* | compiled/nodes/* compiled/styles/* compiled/markup/* |> !package |> out.lua
