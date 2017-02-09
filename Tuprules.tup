@@ -2,14 +2,14 @@ TOP = $(TUP_CWD)
 
 # Compilers
   # MetaLua
-    !meta = |> metalua -f %f ++run -S > %o |>
+    !meta = |> ^ MetaLua %f^ metalua -f %f ++run -S > %o |>
   # Moonscript
-    !moon = |> moonc -o %o %f |>
+    !moon = |> ^ Moonscript %f^ moonc -o %o %f |>
   # Cat (just copies the file)
-    !cat = |> cat %f > %o |>
+    !cat = |> ^ Copy file %f^ cat %f > %o |>
 
 # Packaging
-!packageNoTitanium = |> lua bin/package.lua -tid --source=compiled --init=main.lua --output=%o |>
-!packageNoTitaniumMinify = |> lua bin/package.lua -m -tid --source=compiled --init=main.lua --output=%o |>
-!package = |> lua bin/package.lua --titanium --titanium-version=v0.1.0-alpha.7 --source=compiled --init=main.lua --output=%o |>
-!packageMinify = |> lua bin/package.lua -m --titanium --titanium-version=v0.1.0-alpha.7 --source=compiled --init=main.lua --output=%o |>
+  !packageNoTitanium = |> ^ Package without Titanium^ lua bin/package.lua -tid --source=compiled --init=main.lua --output=%o |>
+  !packageNoTitaniumMinify = |> ^ Package witout Titanium (minified)^ lua bin/package.lua -m -tid --source=compiled --init=main.lua --output=%o |>
+  !package = |> ^ Package^ lua bin/package.lua --titanium --titanium-version=v0.1.0-alpha.7 --source=compiled --init=main.lua --output=%o |>
+  !packageMinify = |> ^ Package (minified)^ lua bin/package.lua -m --titanium --titanium-version=v0.1.0-alpha.7 --source=compiled --init=main.lua --output=%o |>
