@@ -54,7 +54,7 @@ updateMessages = ->
       author = Label(v.author..":",1,k+shift)\set {
         colour: colors.cyan
       }
-      message = TextContainer(v.content, 1, k+shift+1, 50, 3)\set {
+      message = TextContainer(v.content, 1, k+shift+1, 49, 3)\set {
         backgroundColour: colors.black
       }
       app.messageContainer\addNode author
